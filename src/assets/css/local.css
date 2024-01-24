@@ -3,553 +3,1335 @@
 <---       Side By Side         -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
-  #sbs {
+@media only screen and (min-width: 0rem) {
+  #sbs-75 {
     padding: var(--sectionPadding);
+    /* clips the red box from causing overflow issues */
+    overflow: hidden;
   }
-  #sbs .cs-container {
+  #sbs-75 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #sbs-75 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 33.875rem;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #sbs-75 .cs-text {
+    margin-bottom: 1rem;
+  }
+  #sbs-75 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #sbs-75 .cs-wrapper {
+    width: 95%;
+    max-width: 34.375rem;
+    /* 28px - 80px */
+    /* pushes up and down by the same amount the decorative box overflows the wrapper */
+    margin: clamp(1.75em, 7.8vw, 5em) 0;
+    position: relative;
+  }
+  #sbs-75 .cs-wrapper:before {
+    /* Red decorative box */
+    content: "";
+    /* make it huge so it covers everything on the left as it overflows */
+    width: 50em;
+    background: var(--primary);
+    opacity: 1;
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    /* 28px - 80px */
+    /* wrapped in a calc function to get a negative clamp value */
+    top: calc(clamp(1.75em, 7.8vw, 5em) * -1);
+    bottom: calc(clamp(1.75em, 7.8vw, 5em) * -1);
+    right: 4.0625em;
+    z-index: -1;
+  }
+  #sbs-75 .cs-picture {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    display: block;
+    /* width divided by height */
+    aspect-ratio: 312/335;
+    border-radius: 1rem;
+    z-index: 1;
+  }
+  #sbs-75 .cs-picture:before {
+    /* Top right box */
+    content: "";
+    width: 10rem;
+    /* 202px - 248px */
+    height: clamp(12.625rem, 25vw, 15.5rem);
+    background: #1a1a1a;
+    opacity: 1;
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    /* 16px -20px */
+    /* wrapped in a calc function to get a negative clamp value */
+    top: calc(clamp(.5rem, 2.09vw, 1.25rem) * -1);
+    right: calc(clamp(.5rem, 2.09vw, 1.25rem) * -1);
+  }
+  #sbs-75 .cs-picture:after {
+    /* Bottom left box */
+    content: "";
+    width: 10rem;
+    /* 202px - 248px */
+    height: clamp(12.625rem, 25vw, 15.5rem);
+    background: #1a1a1a;
+    opacity: 1;
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    /* 16px -20px */
+    /* wrapped in a calc function to get a negative clamp value */
+    bottom: calc(clamp(.5rem, 2.09vw, 1.25rem) * -1);
+    left: calc(clamp(.5rem, 2.09vw, 1.25rem) * -1);
+    z-index: -1;
+  }
+  #sbs-75 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #sbs-75 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* 60px - 128px */
+    gap: clamp(3.75rem, 9.5vw, 8rem);
+  }
+  #sbs-75 .cs-wrapper {
+    /* 328px - 502px */
+    width: clamp(20.5rem, 37.5vw, 31.375rem);
+    /* 440px - 520px */
+    height: clamp(27.5rem, 40vw, 32.5rem);
+    flex: none;
+  }
+  #sbs-75 .cs-picture {
+    /* 16px - 20px */
+    margin: 0 0 0 clamp(1rem, 5vw, 1.25rem);
+    height: 100%;
+    flex: none;
+  }
+  #sbs-75 .cs-content {
+    width: 45%;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #sbs-75 .cs-wrapper:before {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #sbs-75 .cs-picture:before,
+  body.dark-mode #sbs-75 .cs-picture:after {
+    background: var(--accent);
+  }
+  body.dark-mode #sbs-75 .cs-title,
+  body.dark-mode #sbs-75 .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+}
+/*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #services-1646 {
+    padding: var(--sectionPadding);
+    background-color: #f7f7f7;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  #services-1646 .cs-container {
     width: 100%;
     max-width: 80rem;
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    row-gap: 2.5rem;
+    /* 16px - 20px */
+    gap: clamp(1rem, 2vw, 1.25rem);
   }
-  #sbs .cs-left {
-    /* scaling the font size with the view width */
-    font-size: min(2.31vw, 0.7em);
-    /* using ems so we can use font size to scale the whole section */
-    width: 39.4375em;
-    height: 39.75em;
-    position: relative;
-  }
-  #sbs .cs-picture {
-    border-radius: 1.5em;
-    display: block;
-    position: absolute;
-    /* clips img tag corners */
-    overflow: hidden;
-  }
-  #sbs .cs-picture img {
+  #services-1646 .cs-content {
     width: 100%;
+    /* 32px - 80px top & bottom */
+    /* 16px - 80px left & right */
+    padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 5vw, 5rem);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* left aligns content, center it horizontally by setting to center */
+    align-items: flex-start;
+    /* left aligns content, center it horizontally by setting to center */
+    text-align: left;
+    background-color: #fff;
+  }
+  #services-1646 .cs-title {
+    color: var(--headerColor);
+  }
+  #services-1646 .cs-text {
+    /* 28px - 40px */
+    margin-bottom: clamp(1.75rem, 3.9vw, 2.5rem);
+    color: var(--bodyTextColor);
+  }
+  #services-1646 .cs-button-solid {
+    font-size: 1rem;
+    text-align: center;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    font-weight: 700;
+    text-decoration: none;
+    min-width: 9.1875rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    color: #fff;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+  }
+  #services-1646 .cs-button-solid:before {
+    content: "";
+    width: 0%;
     height: 100%;
-    /* makes image act like a background image */
-    object-fit: cover;
+    background: #000;
+    opacity: 1;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
+    transition: width 0.3s;
   }
-  #sbs .cs-picture1 {
-    width: 32.625em;
-    height: 36.3125em;
-    top: 0;
-    left: 0;
+  #services-1646 .cs-button-solid:hover {
+    color: #fff;
   }
-  #sbs .cs-picture2 {
-    width: 25.875em;
-    height: 25em;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
-    /* 6px - 12px */
-    border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
-    right: 0;
-    bottom: 0;
+  #services-1646 .cs-button-solid:hover:before {
+    width: 100%;
   }
-  #sbs .cs-right {
-    max-width: 33.875rem;
-    margin: auto;
+  #services-1646 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: center;
+    /* 16px - 20px */
+    gap: clamp(1rem, 2.5vw, 1.25rem);
   }
-  #sbs .cs-topper {
+  #services-1646 .cs-item {
+    list-style: none;
+    /* .cs-h3 and .cs-item-text both use text-align: inherit, so change the below to affect the whole item */
     text-align: left;
-    margin-bottom: 0.25rem;
-  }
-  #sbs .cs-title {
-    text-align: left;
-    max-width: 50rem;
-  }
-  #sbs .cs-text {
-    text-align: left;
-    max-width: 46.875rem;
-    margin-bottom: 1rem;
-  }
-  #sbs .cs-text:last-of-type {
-    margin-bottom: 2rem;
-  }
-  #sbs .cs-flex-group {
+    width: 100%;
+    margin: 0;
     /* 16px - 32px */
     padding: clamp(1rem, 3vw, 2rem);
-    background-color: #f7f7f7;
-    border-radius: 1rem;
-    position: relative;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s;
+    gap: 1.5rem;
+    grid-column: span 12;
   }
-  #sbs .cs-flex-p {
+  #services-1646 .cs-item:hover {
+    border-color: var(--primary);
+  }
+  #services-1646 .cs-icon {
+    width: 3rem;
+    height: auto;
+    display: block;
+  }
+  #services-1646 .cs-h3 {
+    font-size: 1.25rem;
+    text-align: inherit;
+    line-height: 1.2em;
+    margin: 0;
+    margin-bottom: 0.75rem;
+    color: var(--headerColor);
+    transition: color 0.3s;
+  }
+  #services-1646 .cs-item-text {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 1.5vw, 1rem);
+    text-align: inherit;
     line-height: 1.5em;
-    margin: 0 0 1rem;
-    color: #353535;
-  }
-  #sbs .cs-name {
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1.2em;
-    text-transform: uppercase;
-    margin: 0 0 0.25rem;
-    color: var(--headerColor);
-    display: block;
-  }
-  #sbs .cs-job {
-    font-size: 0.875rem;
-    line-height: 1.5em;
-    color: #353535;
-    display: block;
-  }
-  #sbs .cs-quote-icon {
-    /* 60px - 136px */
-    width: clamp(3.75rem, 10vw, 8.5rem);
-    height: auto;
-    position: absolute;
-    /* 16px - 32px */
-    right: clamp(1rem, 4vw, 2rem);
-    bottom: 0rem;
-  }
-  #sbs .cs-button-solid {
-    margin-top: 2rem;
+    margin: 0;
+    color: var(--bodyTextColor);
   }
 }
-/* Desktop - 1024px */
-@media only screen and (min-width: 64em) {
-  #sbs .cs-container {
-    flex-flow: row;
-    justify-content: space-between;
-    gap: 3.25rem;
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #services-1646 .cs-container {
+    flex-direction: row;
+    align-items: stretch;
   }
-  #sbs .cs-left {
-    font-size: min(1.2vw, 1em);
+  #services-1646 .cs-content {
+    width: 44%;
+    max-width: 32.625rem;
+    align-self: stretch;
     flex: none;
   }
-  #sbs .cs-right {
+  #services-1646 .cs-item {
+    grid-column: span 6;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #services-1646 {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #services-1646 .cs-item,
+  body.dark-mode #services-1646 .cs-content {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  body.dark-mode #services-1646 .cs-title,
+  body.dark-mode #services-1646 .cs-text,
+  body.dark-mode #services-1646 .cs-h2,
+  body.dark-mode #services-1646 .cs-h3,
+  body.dark-mode #services-1646 .cs-item-text {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #services-1646 .cs-text,
+  body.dark-mode #services-1646 .cs-item-text {
+    opacity: 0.8;
+  }
+}
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #sbsr-76 {
+    padding: var(--sectionPadding);
+    /* clips the red box from causing overflow issues */
+    overflow: hidden;
+  }
+  #sbsr-76 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #sbsr-76 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 33.875rem;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #sbsr-76 .cs-text {
+    margin-bottom: 1rem;
+  }
+  #sbsr-76 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #sbsr-76 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #sbsr-76 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #sbsr-76 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #sbsr-76 .cs-wrapper {
+    width: 95%;
+    max-width: 34.375rem;
+    /* 28px - 80px */
+    /* pushes up and down by the same amount the decorative box overflows the wrapper */
+    margin: clamp(1.75em, 7.8vw, 5em) 0;
+    position: relative;
+    z-index: 1;
+  }
+  #sbsr-76 .cs-wrapper:before {
+    /* Red decorative box */
+    content: "";
+    /* make it huge so it covers everything on the left as it overflows */
+    width: 50em;
+    background: var(--primary);
+    opacity: 1;
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    /* 28px - 80px */
+    /* wrapped in a calc function to get a negative clamp value */
+    top: calc(clamp(1.75em, 7.8vw, 5em) * -1);
+    bottom: calc(clamp(1.75em, 7.8vw, 5em) * -1);
+    left: 4.0625em;
+    z-index: -1;
+  }
+  #sbsr-76 .cs-picture {
+    width: 100%;
+    margin: 0;
+    /* width divided by height */
+    aspect-ratio: 312/335;
+    border-radius: 1rem;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  #sbsr-76 .cs-picture:before {
+    /* Top right box */
+    content: "";
+    width: 10rem;
+    /* 202px - 248px */
+    height: clamp(12.625rem, 25vw, 15.5rem);
+    background: #1a1a1a;
+    opacity: 1;
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    /* 16px -20px */
+    /* wrapped in a calc function to get a negative clamp value */
+    top: calc(clamp(.5rem, 2.09vw, 1.25rem) * -1);
+    right: calc(clamp(.5rem, 2.09vw, 1.25rem) * -1);
+  }
+  #sbsr-76 .cs-picture:after {
+    /* Bottom left box */
+    content: "";
+    width: 10rem;
+    /* 202px - 248px */
+    height: clamp(12.625rem, 25vw, 15.5rem);
+    background: #1a1a1a;
+    opacity: 1;
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    /* 16px -20px */
+    /* wrapped in a calc function to get a negative clamp value */
+    bottom: calc(clamp(.5rem, 2.09vw, 1.25rem) * -1);
+    left: calc(clamp(.5rem, 2.09vw, 1.25rem) * -1);
+    z-index: -1;
+  }
+  #sbsr-76 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #sbsr-76 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    /* 60px - 128px */
+    gap: clamp(3.75rem, 9.5vw, 8rem);
+  }
+  #sbsr-76 .cs-wrapper {
+    /* 328px - 502px */
+    width: clamp(20.5rem, 37.5vw, 31.375rem);
+    /* 440px - 520px */
+    height: clamp(27.5rem, 40vw, 32.5rem);
+    /* 16px - 20px */
+    margin-right: clamp(1rem, 5vw, 1.25rem);
+    /* sends it to the right in the 2nd position */
+    order: 2;
+    flex: none;
+  }
+  #sbsr-76 .cs-picture {
+    margin: 0;
+    height: 100%;
+    flex: none;
+  }
+  #sbsr-76 .cs-content {
+    width: 45%;
     margin: 0;
   }
 }
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #sbs .cs-left:before,
-  body.dark-mode #sbs .cs-left:after {
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #sbsr-76 .cs-wrapper:before {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #sbsr-76 .cs-picture:before,
+  body.dark-mode #sbsr-76 .cs-picture:after {
     background: var(--accent);
   }
-  body.dark-mode #sbs .cs-picture2 {
-    background-color: var(--dark);
-    /* 6px - 12px */
-    border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-  }
-  body.dark-mode #sbs .cs-topper {
-    color: var(--primaryLight);
-  }
-  body.dark-mode #sbs .cs-title,
-  body.dark-mode #sbs .cs-text,
-  body.dark-mode #sbs .cs-h3,
-  body.dark-mode #sbs .cs-flex-p,
-  body.dark-mode #sbs .cs-name {
+  body.dark-mode #sbsr-76 .cs-title,
+  body.dark-mode #sbsr-76 .cs-text {
     color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #sbs .cs-flex-group {
-    background-color: var(--accent);
-  }
-  body.dark-mode #sbs .cs-job {
-    color: var(--bodyTextColorWhite);
-    opacity: 0.8;
-  }
-  body.dark-mode #sbs .cs-quote-icon {
-    opacity: 0.2;
   }
 }
 /*-- -------------------------- -->
 <---       Side By Side         -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
-  #sbs-r {
+@media only screen and (min-width: 0rem) {
+  #sbs-97 {
     padding: var(--sectionPadding);
   }
-  #sbs-r .cs-container {
+  #sbs-97 .cs-container {
     width: 100%;
-    max-width: 80rem;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    row-gap: 2.5rem;
+    /* 48px - 64px, changed clamp at tablet */
+    gap: clamp(3rem, 6vw, 4rem);
   }
-  #sbs-r .cs-left {
-    /* scaling the font size with the view width */
-    font-size: min(2.31vw, 0.7em);
-    /* using ems so we can use font size to scale the whole section */
-    width: 39.4375em;
-    height: 39.75em;
-    position: relative;
-  }
-  #sbs-r .cs-picture {
-    border-radius: 1.5em;
-    display: block;
-    position: absolute;
-    /* clips img tag corners */
-    overflow: hidden;
-  }
-  #sbs-r .cs-picture img {
+  #sbs-97 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
     width: 100%;
-    height: 100%;
-    /* makes image act like a background image */
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  #sbs-r .cs-picture1 {
-    width: 32.625em;
-    height: 36.3125em;
-    top: 0;
-    right: 0;
-  }
-  #sbs-r .cs-picture2 {
-    width: 25.875em;
-    height: 25em;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
-    /* 6px - 12px */
-    border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
-    bottom: 0;
-    left: 0;
-  }
-  #sbs-r .cs-right {
     max-width: 33.875rem;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
   }
-  #sbs-r .cs-topper {
-    text-align: left;
-    margin-bottom: 0.25rem;
+  #sbs-97 .cs-title {
+    max-width: 17ch;
   }
-  #sbs-r .cs-title {
-    text-align: left;
-    max-width: 50rem;
-  }
-  #sbs-r .cs-text {
-    text-align: left;
-    max-width: 46.875rem;
+  #sbs-97 .cs-text {
     margin-bottom: 1rem;
   }
-  #sbs-r .cs-text:last-of-type {
+  #sbs-97 .cs-text:last-of-type {
     margin-bottom: 2rem;
   }
-  #sbs-r .cs-flex-group {
-    /* 16px - 32px */
-    padding: clamp(1rem, 3vw, 2rem);
-    background-color: #f7f7f7;
-    border-radius: 1rem;
+  #sbs-97 .cs-ul {
+    margin: 0 0 2rem 0;
+    /* 16px - 20px */
+    padding-left: clamp(1rem, 2vw, 1.25rem);
+  }
+  #sbs-97 .cs-li {
+    list-style: none;
+    /* 14px - 18px */
+    font-size: clamp(0.875rem, 1.3vw, 1.125rem);
+    line-height: 1.5em;
+    /* 8px - 12px */
+    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+    color: var(--bodyTextColor);
     position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
-  #sbs-r .cs-flex-p {
+  #sbs-97 .cs-li:last-of-type {
+    margin-bottom: 0;
+  }
+  #sbs-97 .cs-number {
     /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    line-height: 1.5em;
-    margin: 0 0 1rem;
-    color: #353535;
-  }
-  #sbs-r .cs-name {
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1.2em;
-    text-transform: uppercase;
-    margin: 0 0 0.25rem;
-    color: var(--headerColor);
-    display: block;
-  }
-  #sbs-r .cs-job {
-    font-size: 0.875rem;
-    line-height: 1.5em;
-    color: #353535;
-    display: block;
-  }
-  #sbs-r .cs-quote-icon {
-    /* 60px - 136px */
-    width: clamp(3.75rem, 10vw, 8.5rem);
-    height: auto;
-    position: absolute;
-    /* 16px - 32px */
-    right: clamp(1rem, 4vw, 2rem);
-    bottom: 0rem;
-  }
-}
-/* Desktop - 1024px */
-@media only screen and (min-width: 64em) {
-  #sbs-r .cs-container {
-    flex-flow: row;
-    justify-content: space-between;
-    gap: 3.25rem;
-  }
-  #sbs-r .cs-left {
-    font-size: min(1.2vw, 1em);
-    /* sends it to the right */
-    order: 2;
+    font-size: clamp(0.875rem, 1.6vw, 1rem);
+    /* 24px - 28px */
+    width: clamp(1.5rem, 2.9vw, 1.75rem);
+    height: clamp(1.5rem, 2.9vw, 1.75rem);
+    margin-right: 0.75rem;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* we set this element to align to the top of the li, so if there's 
+            multiple lines it will stay at the top instead of the center of the text */
+    align-self: flex-start;
+    /* prevents flexbox from squishing it */
     flex: none;
   }
-  #sbs-r .cs-right {
+  #sbs-97 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
     margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #sbs-97 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #sbs-97 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #sbs-97 .cs-picture {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    display: block;
+    /* width divided by height */
+    aspect-ratio: 328/420;
+  }
+  #sbs-97 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #sbs-97 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* 60px - 108px */
+    gap: clamp(3.75rem, 7.8vw, 6.75rem);
+  }
+  #sbs-97 .cs-picture {
+    /* 284px - 522px */
+    width: clamp(17.75rem, 39.3vw, 32.625rem);
+    /* 492px - 740px */
+    height: clamp(30.75rem, 60.9vw, 46.25rem);
+    /* prevents flexbox from squishing it */
+    flex: none;
   }
 }
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #sbs-r .cs-left:before,
-  body.dark-mode #sbs-r .cs-left:after {
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #sbs-97 .cs-picture:before,
+  body.dark-mode #sbs-97 .cs-picture:after {
     background: var(--accent);
   }
-  body.dark-mode #sbs-r .cs-picture2 {
-    background-color: var(--dark);
-    /* 6px - 12px */
-    border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-  }
-  body.dark-mode #sbs-r .cs-topper {
+  body.dark-mode #sbs-97 .cs-topper {
     color: var(--primaryLight);
   }
-  body.dark-mode #sbs-r .cs-title,
-  body.dark-mode #sbs-r .cs-text,
-  body.dark-mode #sbs-r .cs-h3,
-  body.dark-mode #sbs-r .cs-flex-p,
-  body.dark-mode #sbs-r .cs-name {
+  body.dark-mode #sbs-97 .cs-text,
+  body.dark-mode #sbs-97 .cs-li,
+  body.dark-mode #sbs-97 .cs-title {
     color: var(--bodyTextColorWhite);
   }
-  body.dark-mode #sbs-r .cs-flex-group {
-    background-color: var(--accent);
-  }
-  body.dark-mode #sbs-r .cs-job {
-    color: var(--bodyTextColorWhite);
+  body.dark-mode #sbs-97 .cs-text {
     opacity: 0.8;
   }
-  body.dark-mode #sbs-r .cs-quote-icon {
-    opacity: 0.2;
+  body.dark-mode #sbs-97 .cs-number {
+    font-weight: bold;
+    color: #000;
+    background-color: var(--primaryLight);
+  }
+  body.dark-mode #sbs-97 .cs-button-solid {
+    background-color: var(--primaryLight);
+    color: #000;
+    transition: color 0.3s;
+  }
+  body.dark-mode #sbs-97 .cs-button-solid:hover {
+    color: #fafbfc;
   }
 }
 /*-- -------------------------- -->
 <---          Gallery           -->
 <--- -------------------------- -*/
-/* Mobile - 360px - Contains hover animation */
-@media only screen and (min-width: 0em) {
-  #gallery {
-    /* Centers button */
-    text-align: center;
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #gallery-48 {
     padding: var(--sectionPadding);
     position: relative;
-    /* Prevents overflow from the image going off screen */
-    overflow: hidden;
   }
-  #gallery .cs-container {
+  #gallery-48 .cs-container {
     width: 100%;
-    max-width: 82.625em;
+    max-width: 80rem;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
   }
-  #gallery .cs-topper {
+  #gallery-48 .cs-content {
+    /* set text align to left if content needs to be left aligned */
     text-align: center;
-    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
   }
-  #gallery .cs-title {
-    text-align: center;
-    max-width: 38.8125rem;
-    margin-bottom: 2.5rem;
+  #gallery-48 .cs-title {
+    margin: 0;
+    max-width: 20ch;
   }
-  #gallery .cs-image-group {
+  #gallery-48 .cs-image-group {
     /* used rem so it doesn't scale with the font size of on parent */
     font-size: min(1.1vw, 1em);
     width: 100%;
-    max-width: 82.625em;
-    margin: 0 auto 3.75rem;
     padding: 0;
+    margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 1.875em;
+    /* 8px - 20px */
+    gap: clamp(0.5rem, 2vw, 1.25rem);
   }
-  #gallery .cs-row {
+  #gallery-48 .cs-row {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 1.875em;
+    /* 8px - 20px */
+    gap: clamp(0.5rem, 2vw, 1.25rem);
   }
-  #gallery .cs-picture {
-    display: block;
-    position: relative;
-  }
-  #gallery .cs-picture img {
+  #gallery-48 .cs-picture {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: relative;
+    display: block;
+  }
+  #gallery-48 .cs-picture img {
     position: absolute;
     top: 0;
     left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
-  #gallery .cs-row-1 .cs-picture1 {
-    width: 26.25em;
+  #gallery-48 .cs-row-1 .cs-picture-1 {
     height: 35.4375em;
   }
-  #gallery .cs-row-1 .cs-picture2 {
-    width: 26.25em;
+  #gallery-48 .cs-row-1 .cs-picture-2 {
     height: 39.3125em;
   }
-  #gallery .cs-row-1 .cs-picture3 {
-    width: 26.25em;
+  #gallery-48 .cs-row-1 .cs-picture-3 {
     height: 32em;
   }
-  #gallery .cs-row-2 .cs-picture1 {
-    width: 26.25em;
+  #gallery-48 .cs-row-2 .cs-picture-1 {
     height: 30.75em;
   }
-  #gallery .cs-row-2 .cs-picture2 {
-    width: 26.25em;
+  #gallery-48 .cs-row-2 .cs-picture-2 {
     height: 32.3125em;
   }
-  #gallery .cs-row-2 .cs-picture3 {
-    width: 26.25em;
+  #gallery-48 .cs-row-2 .cs-picture-3 {
     height: 39.3125em;
   }
-  #gallery .cs-row-3 .cs-picture1 {
-    width: 26.25em;
+  #gallery-48 .cs-row-3 .cs-picture-1 {
     height: 39.0625em;
   }
-  #gallery .cs-row-3 .cs-picture2 {
-    width: 26.25em;
+  #gallery-48 .cs-row-3 .cs-picture-2 {
     height: 28.25em;
   }
-  #gallery .cs-row-3 .cs-picture3 {
-    width: 26.25em;
+  #gallery-48 .cs-row-3 .cs-picture-3 {
     height: 39.3125em;
+  }
+  #gallery-48 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #gallery-48 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #gallery-48 .cs-button-solid:hover:before {
+    width: 100%;
   }
 }
 /* Dark mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #gallery .cs-title {
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #gallery-48 .cs-title {
     color: var(--bodyTextColorWhite);
+  }
+}
+/*-- -------------------------- -->
+<---         Why Choose         -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #why-choose-359 {
+    padding: var(--sectionPadding);
+  }
+  @keyframes floatAnimation2 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+    70% {
+      transform: translateY(4px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes InAndOut {
+    0% {
+      transform: translateY(2.5rem) scale(1);
+      opacity: 1;
+    }
+    30% {
+      transform: translateY(1.25rem) scale(0.8);
+      opacity: 1;
+    }
+    60% {
+      transform: translateY(0.625rem) scale(0.5);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0rem) scale(0.5);
+      opacity: 0;
+    }
+  }
+  @keyframes InAndOut2 {
+    0% {
+      transform: translateY(3.125rem) scale(1);
+      opacity: 1;
+    }
+    30% {
+      transform: translateY(2.5rem) scale(1);
+      opacity: 1;
+    }
+    60% {
+      transform: translateY(1.25rem) scale(0.6);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0rem) scale(0.4);
+      opacity: 0;
+    }
+  }
+  #why-choose-359 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* 48px - 56px */
+    gap: clamp(3rem, 7vw, 3.5rem);
+  }
+  #why-choose-359 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #why-choose-359 .cs-title {
+    max-width: 20ch;
+  }
+  #why-choose-359 .cs-text {
+    margin-bottom: 1rem;
+  }
+  #why-choose-359 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #why-choose-359 .cs-picture {
+    width: 100%;
+    height: 25rem;
+    border-radius: 1rem;
+    /* clips the corners of rhe image */
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  #why-choose-359 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* change to "top" if you don't want the top of the image cut off */
+    object-position: center;
+  }
+  #why-choose-359 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* 16px - 20px */
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  #why-choose-359 .cs-item {
+    list-style: none;
+    width: 100%;
+    /* 24px - 32px */
+    padding: clamp(1.5rem, 4.3vw, 2rem);
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    border-radius: 1rem;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #why-choose-359 .cs-icon-wrapper {
+    width: 4.0625rem;
+    height: 5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+  }
+  #why-choose-359 .cs-icon-wrapper:before {
+    /* Small Bubble */
+    content: "";
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+    background: #e5f2ff;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0.1875rem;
+    animation-name: InAndOut;
+    animation-duration: 1.6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  #why-choose-359 .cs-icon-wrapper:after {
+    /* Small Bubble */
+    content: "";
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+    background: #e5f2ff;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 0.6875rem;
+    right: 0.3125rem;
+    animation-name: InAndOut2;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  #why-choose-359 .cs-bubble {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  #why-choose-359 .cs-bubble:before {
+    /* Big Bubble */
+    content: "";
+    width: 2.6875rem;
+    height: 2.6875rem;
+    border-radius: 50%;
+    background: #e5f2ff;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    bottom: 0.25rem;
+    left: 0rem;
+    animation-name: floatAnimation2;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  #why-choose-359 .cs-bubble:after {
+    /* Big Bubble */
+    content: "";
+    width: 1.9375rem;
+    height: 1.9375rem;
+    border-radius: 50%;
+    background: #e5f2ff;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    bottom: -0.25rem;
+    right: 0rem;
+    animation-name: floatAnimation2;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  #why-choose-359 .cs-icon {
+    width: 3rem;
+    height: auto;
+    position: relative;
+    z-index: 10;
+  }
+  #why-choose-359 .cs-h3 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 0.75rem;
+    color: var(--headerColor);
+  }
+  #why-choose-359 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.6vw, 1rem);
+    line-height: 1.5em;
+    text-align: center;
+    margin: 0;
+    color: var(--bodyTextColor);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #why-choose-359 .cs-item {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  #why-choose-359 .cs-icon-wrapper {
+    margin-right: 1.5rem;
+  }
+  #why-choose-359 .cs-h3,
+  #why-choose-359 .cs-item-text {
+    text-align: left;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #why-choose-359 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  #why-choose-359 .cs-content {
+    max-width: 32.625rem;
+  }
+  #why-choose-359 .cs-picture {
+    height: 17.5rem;
+  }
+  #why-choose-359 .cs-card-group {
+    width: 50%;
+    max-width: 39.375rem;
+    /* prevents flexbox from squishing it */
+    flex: none;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #why-choose-359 .cs-topper {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #why-choose-359 .cs-title,
+  body.dark-mode #why-choose-359 .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #why-choose-359 .cs-icon-wrapper:before,
+  body.dark-mode #why-choose-359 .cs-bubble:before,
+  body.dark-mode #why-choose-359 .cs-icon-wrapper:after,
+  body.dark-mode #why-choose-359 .cs-bubble:after {
+    background-color: var(--accent);
+  }
+  body.dark-mode #why-choose-359 .cs-icon {
+    /* turns the icon white */
+    filter: grayscale(1) brightness(1000%);
+  }
+  body.dark-mode #why-choose-359 .cs-h3 {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #why-choose-359 .cs-item-text {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
   }
 }
 /*-- -------------------------- -->
 <---          Reviews           -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
-  #reviews {
+@media only screen and (min-width: 0rem) {
+  #reviews-286 {
     /* Centers the button */
     text-align: center;
     padding: var(--sectionPadding);
   }
-  #reviews .cs-container {
+  #reviews-286 .cs-container {
     width: 100%;
-    max-width: 69rem;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  #reviews .cs-topper {
-    text-align: center;
-    margin-bottom: 1rem;
+  #reviews-286 .cs-content {
+    /* breaks the children elements out of the container, this allows the button to use the order property to send itself to the bottom of the .cs-container flexbox */
+    display: contents;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  #reviews .cs-title {
-    text-align: center;
-    max-width: 43.75rem;
+  #reviews-286 .cs-text {
+    /* 48px - 64px, removed at desktop */
+    margin-bottom: clamp(3rem, 6vw, 4rem);
   }
-  #reviews .cs-text {
-    text-align: center;
-    max-width: 40.625rem;
-    /* 88px - 104px */
-    margin-bottom: clamp(5.5em, 10.2vw, 6.5em);
-  }
-  #reviews .cs-card-group {
+  #reviews-286 .cs-card-group {
+    padding: 0;
     /* 48px - 64px */
     margin: 0 auto clamp(3rem, 5vw, 4rem);
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1rem;
   }
-  #reviews .cs-item {
+  #reviews-286 .cs-item {
     text-align: left;
     list-style: none;
     width: 100%;
-    max-width: 33.875rem;
-    margin: 0 auto 4rem;
+    /* max width set at desktop */
+    margin: 0;
+    /* 24px - 32px */
+    padding: clamp(1.5rem, 3vw, 2rem);
     /* Prevents padding from affecting height & width */
     box-sizing: border-box;
-    /* Padding L & R - 16px - 32px */
-    padding: 3.75rem clamp(1rem, 3.2vw, 2rem) 0;
-    /* 32px - 40px */
-    padding-bottom: clamp(2rem, 5.4vw, 2.5rem);
-    background: #fff;
-    box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
     border-radius: 0.25rem;
+    background: #fff;
+    position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
-    position: relative;
+    align-items: center;
   }
-  #reviews .cs-item:last-of-type {
-    margin-bottom: 0;
-  }
-  #reviews .cs-item-img {
+  #reviews-286 .cs-item-img {
     width: 5rem;
     height: 5rem;
-    position: absolute;
-    top: calc(-40 / 16 * 1rem);
+    margin-bottom: 1.25rem;
   }
-  #reviews .cs-item-p {
-    font-size: 1rem;
+  #reviews-286 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
     line-height: 1.5em;
     margin: 0 0 1.25rem;
     padding-bottom: 1.25rem;
     color: var(--bodyTextColor);
     border-bottom: 1px solid #e8e9ec;
   }
-  #reviews .cs-reviewer {
+  #reviews-286 .cs-reviewer {
     font-size: 1rem;
-    font-weight: 700;
     line-height: 1.5em;
+    font-weight: 700;
     width: 40%;
     margin: 0 auto 0 0;
-    color: var(--headerColor);
     display: block;
+    color: var(--headerColor);
   }
-  #reviews .cs-desc {
+  #reviews-286 .cs-desc {
     font-size: 0.875rem;
     font-weight: 400;
-    color: var(#353535);
+    color: #7d799c;
     display: block;
   }
-  #reviews .cs-item-stars {
+  #reviews-286 .cs-item-stars {
     width: 6rem;
     height: 1rem;
   }
+  #reviews-286 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #reviews-286 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #reviews-286 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #reviews-286 .cs-button-solid {
+    /* places it at the bottom of the container in the 3rd position */
+    order: 3;
+  }
 }
 /* Tablet - 768px */
-@media only screen and (min-width: 48em) {
-  #reviews .cs-card-group {
-    display: flex;
+@media only screen and (min-width: 48rem) {
+  #reviews-286 .cs-container {
+    max-width: 80rem;
+  }
+  #reviews-286 .cs-card-group {
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     gap: 1rem;
   }
-  #reviews .cs-item {
+  #reviews-286 .cs-item {
     /* reset margin so it won't interfere with flexbox */
     margin: 0;
   }
 }
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #reviews-286 .cs-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #reviews-286 .cs-content {
+    /* moves button to the left */
+    text-align: left;
+    margin-right: 2.5rem;
+    max-width: 20.375rem;
+    /* turn off the contents property, all children now live with the parent again */
+    display: flex;
+  }
+  #reviews-286 .cs-text {
+    margin: 0 0 2rem 0;
+  }
+  #reviews-286 .cs-card-group {
+    margin: 0;
+    /* push down 40px to offset the negative margin on the cs-item-img */
+    margin-top: 2.5rem;
+  }
+  #reviews-286 .cs-item {
+    max-width: 26.4375rem;
+  }
+  #reviews-286 .cs-item-img {
+    /* make image overlap the container, accounting for 40px padding + 40px overlap */
+    margin-top: -5rem;
+  }
+}
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #reviews .cs-title,
-  body.dark-mode #reviews .cs-text,
-  body.dark-mode #reviews .cs-item-p,
-  body.dark-mode #reviews .cs-reviewer {
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #reviews-286 .cs-title,
+  body.dark-mode #reviews-286 .cs-text,
+  body.dark-mode #reviews-286 .cs-item-text,
+  body.dark-mode #reviews-286 .cs-reviewer {
     color: var(--bodyTextColorWhite);
   }
-  body.dark-mode #reviews .cs-item {
+  body.dark-mode #reviews-286 .cs-item {
     background: var(--medium);
   }
-  body.dark-mode #reviews .cs-desc {
+  body.dark-mode #reviews-286 .cs-desc {
     color: var(--primaryLight);
   }
 }
