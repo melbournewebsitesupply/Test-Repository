@@ -1498,6 +1498,8 @@ html {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 0.23rem;
+    padding-bottom: 1rem;
   }
   #footer-1392 .cs-bottom {
     width: 100%;
